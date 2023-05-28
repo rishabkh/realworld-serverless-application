@@ -18,7 +18,95 @@ import software.amazon.serverless.apprepo.api.client.model.transform.Application
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ApplicationList implements Serializable, Cloneable, StructuredPojo {
+  private String clientId;
+  private List<String> therapists;
+  private List<String> emotionRecords;
+  private List<String> appointmentRequests;
+  private List<String> messages;
+  
+  
+  // Client methods
+  public void setClientId(String clientId) {
+      this.clientId = clientId;
+  }
+  public String getClientId() {
+      return clientId;
+  }
+  public List<String> getTherapists() {
+      return therapists;
+  }
+  public void setTherapists(List<String> therapists) {
+      this.therapists = therapists;
+  }
 
+  public void addTherapist(String therapistId) {
+      therapists.add(therapistId);
+  }
+
+  public void removeTherapist(String therapistId) {
+      therapists.remove(therapistId);
+  }
+
+  public List<String> getEmotionRecords() {
+      return emotionRecords;
+  }
+  public void setEmotionRecords(List<String> emotionRecords) {
+      this.emotionRecords = emotionRecords;
+  }
+
+  public void addEmotionRecord(String emotionRecord) {
+      emotionRecords.add(emotionRecord);
+  }
+
+  public List<String> getAppointmentRequests() {
+      return appointmentRequests;
+  }
+
+  public void setAppointmentRequests(List<String> appointmentRequests) {
+      this.appointmentRequests = appointmentRequests;
+  }
+
+  public void addAppointmentRequest(String appointmentRequest) {
+      appointmentRequests.add(appointmentRequest);
+  }
+
+  public List<String> getMessages() {
+      return messages;
+  }
+
+  public void setMessages(List<String> messages) {
+      this.messages = messages;
+  }
+
+  public void sendMessage(String message) {
+      messages.add(message);
+  }
+  
+  // Therapist methods
+  public void requestClientMapping(String clientId) {
+      // Send a request to associate the client with this therapist
+  }
+
+  public void requestJournalAccess(String clientId) {
+      // Send a request to access the client's emotions journal
+  }
+
+  public void removeClient(String clientId) {
+      // Remove the client from the therapist's list of clients
+  }
+
+  public List<String> getClientJournals(String clientId) {
+      // Retrieve and return the client's emotions journals associated with this therapist
+  }
+
+  public void modifySessionDetails(String sessionId, String privateNotes, String sharedNotes) {
+      // Modify the details of the therapy session, including private and shared notes
+  }
+
+  public List<String> searchKeywords(String keyword) {
+      // Search across customers, notes, and emotions journals for the specified keyword
+  }
+  
   private java.util.List<ApplicationSummary> applications;
 
   private String nextToken;
